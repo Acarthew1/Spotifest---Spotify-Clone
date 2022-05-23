@@ -5,7 +5,7 @@ import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { useDataLayerValue } from './DataLayer';
-import  Header from './Header';
+import  Header from './HeaderSearch';
 import Sidebar from './Sidebar';
 import Body from './Body';
 import Footer from './Footer';

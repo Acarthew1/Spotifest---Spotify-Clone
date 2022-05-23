@@ -9,6 +9,7 @@ export const initialState = {
     selectedPlaylist: null,
     selectedPlaylistTracks: null,
     playingTrack: null,
+    searchResult: null,
 };
 
 const reducer = (state, action) => {
@@ -54,6 +55,11 @@ const reducer = (state, action) => {
         return {
             ...state,
             playingTrack: action.playingTrack
+        }
+        case 'SET_SEARCH_RESULT':
+        return {
+            ...state,
+            searchResult: action.searchResult
         }
         default: 
             return state;

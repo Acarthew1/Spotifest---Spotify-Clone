@@ -22,7 +22,7 @@ function SidebarOption({ Icon, title, uri, playlist }) {
             {Icon && <Icon className='SidebarOptionIcon' />}
             
            
-            {Icon ? <Link to="/" className='SidebarOption' style={{ textDecoration: 'none' }}> <h4>{title}</h4> </Link> : <Link to="/playlist" className='SidebarOption' style={{ textDecoration: 'none' }}> <p onClick={handlePlaylistClick}>{title}</p> </Link>}
+            {Icon ? <h4>{title}</h4> : <Link to="/playlist" className='SidebarOption' style={{ textDecoration: 'none' }}> <p onClick={handlePlaylistClick}>{title}</p> </Link>}
             
         </div>
     );

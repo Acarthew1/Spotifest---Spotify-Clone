@@ -4,7 +4,7 @@
     margin-bottom: 30px;
 }
 
-.HeaderLeft {
+.HeaderLeftSearch {
     flex: 0.5;
     min-width: 70px;
     background-color: white;
@@ -15,7 +15,15 @@
     align-items: center;
 }
 
-.HeaderLeft > input {
+.HeaderLeft {
+    flex: 0.5;
+    min-width: 70px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.HeaderLeftSearch > input {
     border: none;
     width: 100%;
     background-color: transparent;

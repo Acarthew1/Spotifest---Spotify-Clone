@@ -12,6 +12,7 @@ import {
   Routes,
 } from "react-router-dom";
 import Footer from './Footer';
+import SearchResults from './SearchResults';
 
 const spotify = new SpotifyWebApi();
 
@@ -66,7 +67,8 @@ function App() {
       
       <Routes>
         <Route path='/' element={<Player spotify={spotify}/>}> </Route>
-        <Route path='/playlist' element={<Playlist spotify={spotify}/>}> </Route>   
+        <Route path='/playlist' element={<Playlist spotify={spotify}/>}> </Route>
+        <Route path='/search' element={<SearchResults spotify={spotify}/>}> </Route>      
       </Routes>   
 
     </div>
