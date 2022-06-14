@@ -4,6 +4,7 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { Avatar } from '@mui/material';
 import { useDataLayerValue } from './DataLayer';
 import SelectSearch from 'react-select-search';
+import TrackArtistResults from './TrackArtistResults';
 
 
 function HeaderSearch({spotify}) {
@@ -12,24 +13,23 @@ function HeaderSearch({spotify}) {
     const [Options, setOptions] = useState([]);
     const [{ user, searchResults }, dispatch] = useDataLayerValue();
 
+
     useEffect(() => {
         if(!Search) return setSearch([])
-        spotify.searchTracks(Search).then(res => {
-            const results = res.tracks.items.map( track => {
+        spotify.searchArtists(Search).then(res => {
+            const results = res.artists.items.map( artist => {
 
                 return {
-                    artist: track.artists[0].name,
-                    title: track.name,
-                    uri: track.uri,
-                    albumUrl: track.album.images[0]
+                    name: artist.name,
+                    image: artist.images[0].url,
+                    uri: artist.uri,
+                    followers: artist.followers.total.toLocaleString('en', {useGrouping:true})
                 }
 
             })
-            setOptions(results);
-            console.log("Options Are: " + JSON.stringify(Options));
             dispatch({
                 type: "SET_SEARCH_RESULTS",
-                searchResults: results
+                searchResults: results[0]
                 
               })
         })

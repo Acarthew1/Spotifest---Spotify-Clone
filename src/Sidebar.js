@@ -7,6 +7,7 @@ import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import FestivalIcon from '@mui/icons-material/Festival';
 import { useDataLayerValue } from './DataLayer';
 import { Link } from 'react-router-dom';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 function Sidebar({ spotify }) {
 
@@ -18,7 +19,7 @@ function Sidebar({ spotify }) {
             <Link to='/' style={{ textDecoration: 'none' }}><SidebarOption title="Home" Icon={HomeIcon} /></Link>
             <Link to='/search' style={{ textDecoration: 'none' }}><SidebarOption title="Search" Icon={SearchOutlinedIcon}/> </Link>
             <SidebarOption title="Your Library" Icon={LibraryMusicIcon}/>
-            <SidebarOption title="Create Festival Playlist" Icon={FestivalIcon}/>
+            <Link to='/festival' style={{ textDecoration: 'none' }}><SidebarOption title="Create Festival Playlist" Icon={FestivalIcon}/></Link>
 
             <br />
             <strong className='SidebarTitle'>PLAYLISTS</strong>

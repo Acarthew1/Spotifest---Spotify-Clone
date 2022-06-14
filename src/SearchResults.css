@@ -1,0 +1,38 @@
+.artist-banner{
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+    width: 100%;
+    height: 20%;
+    
+}
+.artistName{
+    font-size: 70px;
+    line-height: 2;
+}
+
+.monthlyListeners{
+    font-size: 16px;
+    line-height: 2;
+    margin-top: 4px;
+}
+
+button{
+    padding: 10px;
+    background-color: #1ed760;
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    outline: none;
+    border-color: #1ed760;
+}
+button:hover {
+    transition: 100ms transform ease-in;
+    transform: scale(1.08);
+}
+
+.artist-banner > img {
+    height: 15vw;
+    margin: 0 20px;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}

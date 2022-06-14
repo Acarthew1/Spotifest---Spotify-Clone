@@ -9,7 +9,12 @@ export const initialState = {
     selectedPlaylist: null,
     selectedPlaylistTracks: null,
     playingTrack: null,
-    searchResult: null,
+    searchResults: null,
+    festivalPlaylist: null,
+    selectedArtist: null,
+    artistTopTracks: null,
+    userPlaylistsForSearch: null
+
 };
 
 const reducer = (state, action) => {
@@ -56,10 +61,30 @@ const reducer = (state, action) => {
             ...state,
             playingTrack: action.playingTrack
         }
-        case 'SET_SEARCH_RESULT':
+        case 'SET_SEARCH_RESULTS':
         return {
             ...state,
-            searchResult: action.searchResult
+            searchResults: action.searchResults
+        }
+        case 'SET_FESTIVAL_PLAYLIST':
+        return {
+            ...state,
+            festivalPlaylist: action.festivalPlaylist
+        }
+       case 'SET_SELECTED_ARTIST':
+        return {
+            ...state,
+            selectedArtist: action.selectedArtist
+        }
+        case 'SET_ARTIST_TOP_TRACKS':
+        return {
+            ...state,
+            artistTopTracks: action.artistTopTracks
+        }
+        case 'SET_USER_PLAYLISTS_FOR_SEARCH':
+        return {
+            ...state,
+            userPlaylistsForSearch: action.userPlaylistsForSearch
         }
         default: 
             return state;

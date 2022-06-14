@@ -1,0 +1,58 @@
+.artistNameText {
+    box-sizing: border-box;
+    font-family: var(--font-family, spotify-circular), Helvetica, Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin-block: 0px;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    letter-spacing: -0.04em;
+    font-weight: 900;
+    color: #FFFFFF;
+}
+.containerOverlay {
+    position: relative;
+    width: 50%;
+  }
+  
+.image {
+opacity: 1;
+display: block;
+width: auto;
+height: auto;
+transition: .1s ease;
+backface-visibility: hidden;
+border-radius: 50%;
+}
+
+.middle {
+transition: .5s ease;
+opacity: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+text-align: center;
+}
+
+.containerOverlay:hover .image {
+filter: blur(6px);
+visibility: visible;
+}
+
+.containerOverlay:hover .middle {
+opacity: 1;
+}
+
+.plus {
+padding: 16px 32px;
+visibility: visible;
+max-width: 50%;
+max-height: 50%;
+cursor: pointer;
+}
+
+.tableSpotify {
+  grid-column: span min(var(--column-count) - 2,6);
+  grid-row: span 3;
+}

@@ -5,7 +5,7 @@ import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { useDataLayerValue } from './DataLayer';
-import  Header from './HeaderSearch';
+import  Header from './Header';
 import Sidebar from './Sidebar';
 import Body from './Body';
 import Footer from './Footer';
@@ -45,7 +45,7 @@ function Playlist( { spotify } ) {
         <div className='BodySongs'>
             <div className='BodyIcons'>
                 <PlayCircleFilledIcon className='BodyShuffle'/>
-                <FavoriteIcon fontSize='large' />
+                <FavoriteIcon fontSize='large' className='clicked' />
                 <MoreHorizIcon />
             </div>
             {selectedPlaylistTracks?.tracks?.items?.map((item) => (

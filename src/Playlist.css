@@ -1,0 +1,5 @@
+.clicked:hover{
+    background-color: #1ed760;
+    transition: 100ms transform ease-in;
+    transform: scale(1.08);
+}
