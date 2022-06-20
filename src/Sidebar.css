@@ -4,7 +4,7 @@
     color: white;
     padding-left: 10px;
     padding-right: 10px;
-    min-width: 230px;
+
     background-color: #040404;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .SidebarTitle {
-    margin-left: 10px;
-    padding: 5px;
-    font-size: 12px;
+    margin-left: 10px !important;
+    padding: 5px !important;
+    font-size: 12px !important;
 }

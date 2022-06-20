@@ -5,6 +5,7 @@
     height: 40px;
     cursor: pointer;
     transition: 150ms color ease-in;
+    text-decoration: none !important; 
 
 }
 
@@ -12,6 +13,7 @@
     border: 1px solid #282828;
     width: 90%;
     margin: 10px auto;
+    text-decoration: none !important; 
 }
 
 .SidebarOption:hover {
@@ -21,10 +23,12 @@
 .SidebarOptionIcon {
     padding-left: 10px;
     padding-right: 10px;
+    text-decoration: none !important; 
 }
 
 .SidebarOption > p {
     margin-top: 10px;
     margin-left: 20px;
     font-size: 14px;
+    text-decoration: none !important; 
 }

@@ -14,7 +14,7 @@ function SearchResults( {spotify} ) {
 
     const [{ searchResults, artistTopTracks, festivalPlaylist }, dispatch] = useDataLayerValue();
     function handleClick() {
-        const toAdd = artistTopTracks.tracks.map((track) => {
+        var toAdd = artistTopTracks.tracks.map((track) => {
             return({
                 image: track.album.images[0].url,
                 uri: track.uri,
@@ -24,6 +24,8 @@ function SearchResults( {spotify} ) {
 
             })
         })
+
+        toAdd = toAdd.slice(0,5);
         
         if(!festivalPlaylist){
             dispatch({
