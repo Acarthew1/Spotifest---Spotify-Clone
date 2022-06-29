@@ -70,8 +70,12 @@ function SearchResults( {spotify} ) {
         }
         
     }, [searchResults])
-    return (
+
+    function isSearchResult() {
         
+    }
+    return (
+        searchResults?
         <div className='Player'>
             <div className='PlayerBody'>
                 <Sidebar spotify={spotify} />
@@ -116,6 +120,16 @@ function SearchResults( {spotify} ) {
             </div>
 
         </div>
+
+        :
+        <div className='Player'>
+            <div className='PlayerBody'>
+                <Sidebar spotify={spotify} />
+                <div className='Body'>
+                    <HeaderSearch spotify={spotify} />
+                </div>
+            </div>
+        </div>    
         
     );
 }
