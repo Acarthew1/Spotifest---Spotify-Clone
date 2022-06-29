@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Body.css';
 import SongRow from './SongRow';
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
@@ -7,11 +7,12 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { useDataLayerValue } from './DataLayer';
 import  Header from './Header';
 import Sidebar from './Sidebar';
-import Body from './Body';
-import Footer from './Footer';
+
 
 function Playlist( { spotify } ) {
-    const [{ selectedPlaylist, selectedPlaylistTracks }, dispatch] = useDataLayerValue();
+    const [{ selectedPlaylist, selectedPlaylistTracks, playlistToPlay }, dispatch] = useDataLayerValue();
+
+    var playlistUriList = [];
     
 
     useEffect(() => {
@@ -22,7 +23,15 @@ function Playlist( { spotify } ) {
               })
           })
 
-    }, [selectedPlaylist])
+    }, [selectedPlaylist]);
+
+    function handlePlayPlaylist(){
+        dispatch({
+            type: "SET_PLAYING_TRACK",
+            playingTrack: selectedPlaylist.uri
+          })
+    }
+
     
 
     return (
@@ -44,8 +53,8 @@ function Playlist( { spotify } ) {
 
         <div className='BodySongs'>
             <div className='BodyIcons'>
-                <PlayCircleFilledIcon className='BodyShuffle'/>
-                <FavoriteIcon fontSize='large' className='clicked' />
+                <PlayCircleFilledIcon className='BodyShuffle' onClick={() => handlePlayPlaylist()}/>
+                <FavoriteIcon fontSize='large' className='clicked'/>
                 <MoreHorizIcon />
             </div>
             {selectedPlaylistTracks?.tracks?.items?.map((item) => (

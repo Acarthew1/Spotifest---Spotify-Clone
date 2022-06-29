@@ -12,7 +12,9 @@ function Footer() {
         setPlay(true);
     }, [playingTrack]);
 
+
     return (
+        <>
         <div className='Footer'>
             <SpotifyPlayer styles={{
                 activeColor: '#fff',
@@ -26,6 +28,8 @@ function Footer() {
                 setPlay(state.isPlaying);
               }} showSaveIcon={true}/>
         </div>
+        
+        </>
     );
 }
 

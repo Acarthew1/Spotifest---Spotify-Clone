@@ -71,11 +71,13 @@ function SearchResults( {spotify} ) {
         
     }, [searchResults])
     return (
+        
         <div className='Player'>
             <div className='PlayerBody'>
                 <Sidebar spotify={spotify} />
                 <div className='Body'>
                     <HeaderSearch spotify={spotify} />
+                    
                     <div className='BodyInfo'>
                         <div className='artist-banner'>
                             <img src={searchResults?.image}></img>
@@ -114,6 +116,7 @@ function SearchResults( {spotify} ) {
             </div>
 
         </div>
+        
     );
 }
 

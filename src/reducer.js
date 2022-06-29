@@ -8,12 +8,13 @@ export const initialState = {
     selectedPlaylistUri: null,
     selectedPlaylist: null,
     selectedPlaylistTracks: null,
-    playingTrack: null,
+    playingTrack: [],
     searchResults: null,
     festivalPlaylist: null,
     selectedArtist: null,
     artistTopTracks: null,
-    userPlaylistsForSearch: null
+    userPlaylistsForSearch: null,
+    playlistToPlay: []
 
 };
 
@@ -89,6 +90,7 @@ const reducer = (state, action) => {
         default: 
             return state;
     }
+    
 }
 
 export default reducer;
