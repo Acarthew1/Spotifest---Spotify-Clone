@@ -11,6 +11,13 @@ function Body({ spotify }) {
 
     const [{ discoverWeekly }, dispatch] = useDataLayerValue();
 
+    function handlePlayPlaylist() {
+        dispatch({
+            type: "SET_PLAYING_TRACK",
+            playingTrack: discoverWeekly.uri
+        })
+    }
+
     return (
         <div className='Body'>
             <Header spotify={spotify} />
@@ -26,7 +33,7 @@ function Body({ spotify }) {
 
             <div className='BodySongs'>
                 <div className='BodyIcons'>
-                    <PlayCircleFilledIcon className='BodyShuffle' />
+                    <PlayCircleFilledIcon className='BodyShuffle' onClick={() => handlePlayPlaylist()} />
                     <FavoriteIcon fontSize='large' className='BodyFave' />
                     <MoreHorizIcon />
                 </div>
