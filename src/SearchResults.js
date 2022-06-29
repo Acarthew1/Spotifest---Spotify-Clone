@@ -71,7 +71,12 @@ function SearchResults( {spotify} ) {
         
     }, [searchResults])
 
-    function isSearchResult() {
+    function handlePlayClick() {
+        console.log(searchResults)
+        dispatch({
+            type: "SET_PLAYING_TRACK",
+            playingTrack: searchResults.uri
+        })
         
     }
     return (
@@ -95,7 +100,7 @@ function SearchResults( {spotify} ) {
                     </div>
                     <div className='BodySongs'>
                         <div className='BodyIcons'>
-                                <PlayCircleFilledIcon className='BodyShuffle'/>
+                                <PlayCircleFilledIcon className='BodyShuffle' onClick={() => handlePlayClick()}/>
                                 <button onClick={ () => {handleClick()}}>Add To Festival Playlist!</button>
                                 <ToastContainer
                                 position="top-center"
