@@ -103,7 +103,7 @@ function CreateFestival({ spotify }) {
                     </div>
                     <div className='BodySongs'>
                         <div className='BodyIcons'>
-                            <button onClick={() => handleShow()}>CREATE</button>
+                            <button onClick={() => handleShow()}>create</button>
                         </div>
                         {festivalPlaylist?.map((item) => (
                         <SongRowFestival track={item} />

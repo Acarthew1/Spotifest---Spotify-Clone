@@ -18,17 +18,20 @@
 }
 
 button{
-    padding: 10px;
-    background-color: #1ed760;
-    color: black;
-    font-weight: bold;
-    border-radius: 10px;
-    outline: none;
-    border-color: #1ed760;
+  background-color: transparent;
+  color: white;
+  font: 14px/19px  "Helvetica", "Arial", sans-serif;
+  border: 1px solid white;
+  border-radius: 12px !important;
+  padding: 15px;
 }
 button:hover {
     transition: 100ms transform ease-in;
     transform: scale(1.08);
+    background-color:  #1DB954;
+}
+button:disabled {
+    text-decoration: line-through;
 }
 
 .artist-banner > img {

@@ -64,6 +64,12 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.BodyAdd {
+    font-size: 80px !important;
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 .BodyShuffle:hover {
     transition: 100ms transform ease-in;

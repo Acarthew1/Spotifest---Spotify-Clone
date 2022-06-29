@@ -55,7 +55,6 @@ function Playlist( { spotify } ) {
             <div className='BodyIcons'>
                 <PlayCircleFilledIcon className='BodyShuffle' onClick={() => handlePlayPlaylist()}/>
                 <FavoriteIcon fontSize='large' className='clicked'/>
-                <MoreHorizIcon />
             </div>
             {selectedPlaylistTracks?.tracks?.items?.map((item) => (
                 <SongRow track={item.track}/>
