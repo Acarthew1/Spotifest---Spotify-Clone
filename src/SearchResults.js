@@ -13,9 +13,21 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function SearchResults( {spotify} ) {
 
-    const [{ searchResults, artistTopTracks, festivalPlaylist }, dispatch] = useDataLayerValue();
+    const [{ searchResults, artistTopTracks, festivalPlaylist, artistList }, dispatch] = useDataLayerValue();
     const [disabled, setDisabled] = useState(false);
+
     function handleAddClick() {
+        if(!artistList) {
+            dispatch({
+                type: 'SET_ARTIST_LIST',
+                artistList: [searchResults]
+            })
+        }else{
+            dispatch({
+                type: 'SET_ARTIST_LIST',
+                artistList: [...artistList, searchResults]
+            })
+        }
         setDisabled(true);
         var toAdd = artistTopTracks.tracks.map((track) => {
             return({
@@ -35,7 +47,6 @@ function SearchResults( {spotify} ) {
                 type: "SET_FESTIVAL_PLAYLIST",
                 festivalPlaylist: toAdd
             })
-            console.log(festivalPlaylist)
             toast.success('🎵 Artist Added To Playlist 🎵', {
                 position: "top-center",
                 autoClose: 5000,

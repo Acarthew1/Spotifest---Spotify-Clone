@@ -1,0 +1,34 @@
+.outer-card {
+    background-color: #171717;
+    width: 200px;
+    height: 280px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: #171717;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin: 15px;
+    object-fit: cover;
+}
+.outer-card:hover {
+    transition: 100ms transform ease-in;
+    transform: scale(1.08);
+}
+
+.artist-image > img {
+    max-width: 95%;
+    max-height: 200px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.artist-image {
+    border-radius: 5px;
+}
+
+.artist-info {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}

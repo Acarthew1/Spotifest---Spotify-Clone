@@ -14,7 +14,7 @@ export const initialState = {
     selectedArtist: null,
     artistTopTracks: null,
     userPlaylistsForSearch: null,
-    playlistToPlay: []
+    artistList: null
 
 };
 
@@ -82,10 +82,10 @@ const reducer = (state, action) => {
             ...state,
             artistTopTracks: action.artistTopTracks
         }
-        case 'SET_USER_PLAYLISTS_FOR_SEARCH':
+        case 'SET_ARTIST_LIST':
         return {
             ...state,
-            userPlaylistsForSearch: action.userPlaylistsForSearch
+            artistList: action.artistList
         }
         default: 
             return state;

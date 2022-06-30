@@ -4,19 +4,23 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import './Body.css';
 import SongRowFestival from './SongRowFestival';
-import { Modal } from 'react-bootstrap';
+import { FormGroup, Modal } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ArtistCard from './ArtistCard';
+import Switch from '@mui/material/Switch';
+import { FormControlLabel } from '@mui/material';
 
 function CreateFestival({ spotify }) {
-    const [{festivalPlaylist, user}, dispatch] = useDataLayerValue();
+    const [{festivalPlaylist, user, artistList}, dispatch] = useDataLayerValue();
     const [show, setShow] = useState(false);
     const [playlistName, setPlaylistName] = useState();
     const [playlistDescription, setPlaylistDescription] = useState();
     const [uriList, setUriList] = useState();
+    const [artistView, setArtistView] = useState(true);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -24,7 +28,6 @@ function CreateFestival({ spotify }) {
      //Get User ID
      const splitUri = user.uri.split(":")
      const userID = splitUri[2]
-     console.log(userID)
 
     function handleCreate() {
         
@@ -86,6 +89,32 @@ function CreateFestival({ spotify }) {
             progress: undefined,
             });
     }
+
+    function viewRender() {
+      if(artistView) {
+        return (
+          artistList?.map((item) => (
+            <ArtistCard artist={item} />
+          ))
+        )
+      }else{
+        return (
+          festivalPlaylist?.map((item) => (
+            <SongRowFestival track={item} />
+            ))
+        )
+      }
+
+      
+    }
+    function handleToggle() {
+      if (artistView){
+        setArtistView(false)
+      }else {
+        setArtistView(true)
+      }
+      
+    }
     return (
         <>
         <div className='Player'>
@@ -95,19 +124,22 @@ function CreateFestival({ spotify }) {
                     <Header spotify={spotify} />
                     <div className='BodyInfo'>
                         <div className='artist-banner'>
-                            <h1>Use this Page to create a playlist</h1>
+                            <h1>Festival Lineup</h1>
                             
                         </div>
+                        
                         
 
                     </div>
                     <div className='BodySongs'>
                         <div className='BodyIcons'>
                             <button onClick={() => handleShow()}>create</button>
+                            <FormGroup>
+                            <FormControlLabel control={<Switch defaultChecked onChange={() => handleToggle()}/>} label="Toggle Artist View" />
+                            </FormGroup>
                         </div>
-                        {festivalPlaylist?.map((item) => (
-                        <SongRowFestival track={item} />
-                        ))}
+                        
+                        {viewRender()}
                                 
                     </div>
                     <div>

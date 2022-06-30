@@ -6,7 +6,6 @@ function SongRowFestival({ track }) {
 
     const [{user}, dispatch] = useDataLayerValue();
 
-
     return (
         <div className='SongRow'>
             <img className='SongRowAlbum' src={track.image} onClick={() => {dispatch({type: "SET_PLAYING_TRACK",playingTrack: track.uri})}} />
