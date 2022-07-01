@@ -1,3 +1,13 @@
+@media only screen and (max-width: 600px) {
+    .PlayerBody {
+        
+        height: 100vh;
+        width: 100% !important;
+        color: white;
+        background: linear-gradient(rgb(91, 87, 115), rgba(0, 0, 0, 1));
+        overflow-y: overlay;
+    }
+  }
 .PlayerBody {
     display: flex;
 }

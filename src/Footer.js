@@ -5,7 +5,7 @@ import { useDataLayerValue } from './DataLayer';
 
 function Footer() {
 
-    const [{ token, playingTrack }, dispatch] = useDataLayerValue();
+    const [{ token, playingTrack }] = useDataLayerValue();
     const [play, setPlay] = useState();
 
     useEffect(() => {

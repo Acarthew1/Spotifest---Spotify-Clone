@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './Body.css';
 import SongRow from './SongRow';
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { useDataLayerValue } from './DataLayer';
 import  Header from './Header';
 import Sidebar from './Sidebar';
 
 
 function Playlist( { spotify } ) {
-    const [{ selectedPlaylist, selectedPlaylistTracks, playlistToPlay }, dispatch] = useDataLayerValue();
+    const [{ selectedPlaylist, selectedPlaylistTracks }, dispatch] = useDataLayerValue();
 
-    var playlistUriList = [];
     
 
     useEffect(() => {
@@ -57,7 +55,7 @@ function Playlist( { spotify } ) {
                 <FavoriteIcon fontSize='large' className='clicked'/>
             </div>
             {selectedPlaylistTracks?.tracks?.items?.map((item) => (
-                <SongRow track={item.track}/>
+                <SongRow track={item.track} key={item.track.uri}/>
             ))}
         </div>
         </div>

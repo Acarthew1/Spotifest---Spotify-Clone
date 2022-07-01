@@ -19,7 +19,6 @@ function CreateFestival({ spotify }) {
     const [show, setShow] = useState(false);
     const [playlistName, setPlaylistName] = useState();
     const [playlistDescription, setPlaylistDescription] = useState();
-    const [uriList, setUriList] = useState();
     const [artistView, setArtistView] = useState(true);
 
     const handleClose = () => setShow(false);
@@ -54,7 +53,7 @@ function CreateFestival({ spotify }) {
     }
     function handleAddSongs() {
         //Get Playlist URI
-        const PlaylistsUri = spotify.getUserPlaylists(userID).then(res => {
+        spotify.getUserPlaylists(userID).then(res => {
             dispatch({
                 type: "SET_PLAYLISTS",
                 playlists: res
@@ -63,8 +62,6 @@ function CreateFestival({ spotify }) {
 
             
             const songsToAdd = festivalPlaylist.map(song => {
-                //splitUri
-                const uri = (song.uri.split(":"))
                 return([
                     song.uri
                 ])
@@ -133,7 +130,7 @@ function CreateFestival({ spotify }) {
                     </div>
                     <div className='BodySongs'>
                         <div className='BodyIcons'>
-                            <button onClick={() => handleShow()}>create</button>
+                            <button className='create-button' onClick={() => handleShow()}>create</button>
                             <FormGroup>
                             <FormControlLabel control={<Switch defaultChecked onChange={() => handleToggle()}/>} label="Toggle Artist View" />
                             </FormGroup>

@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Header.css';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { Avatar } from '@mui/material';
 import { useDataLayerValue } from './DataLayer';
-import SelectSearch from 'react-select-search';
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 function Header({spotify}) {
 
-    const [{ user, searchResults }, dispatch] = useDataLayerValue();
+    const [{ user}, dispatch] = useDataLayerValue();
 
     return (
         <div className='Header'>
             <div className='HeaderLeft'>
-                
+                <MenuIcon className='menuIconMobile'></MenuIcon>
             </div>
 
             <div className='HeaderRight'>

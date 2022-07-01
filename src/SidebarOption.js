@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function SidebarOption({ Icon, title, uri, playlist }) {
 
-    const [{user, token} , dispatch] = useDataLayerValue();
+    const [{token} , dispatch] = useDataLayerValue();
    // spotify.setAccessToken(token);
 
     function handlePlaylistClick () {
