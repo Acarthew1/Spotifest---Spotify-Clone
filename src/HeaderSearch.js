@@ -5,13 +5,14 @@ import { Avatar } from '@mui/material';
 import { useDataLayerValue } from './DataLayer';
 import SelectSearch from 'react-select-search';
 import TrackArtistResults from './TrackArtistResults';
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 function HeaderSearch({spotify}) {
 
     const [Search, setSearch] = useState();
     const [Options, setOptions] = useState([]);
-    const [{ user, searchResults }, dispatch] = useDataLayerValue();
+    const [{ user, searchResults, isExpanded }, dispatch] = useDataLayerValue();
 
 
     useEffect(() => {
@@ -36,8 +37,16 @@ function HeaderSearch({spotify}) {
         
     }, [Search])
 
+    function handleExpandClick() {
+        dispatch({
+            type: 'SET_IS_EXPANDED',
+            isExpanded: !isExpanded
+        })
+    }
+
     return (
         <div className='Header'>
+            <MenuIcon onClick={() => handleExpandClick()} className='menuIconMobile'></MenuIcon>
             <div className='HeaderLeftSearch'>
                 <SearchOutlinedIcon />
                 <input
