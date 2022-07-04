@@ -15,6 +15,7 @@ import Footer from './Footer';
 import SearchResults from './SearchResults';
 import CreateFestival from './CreateFestival';
 
+
 const spotify = new SpotifyWebApi();
 
 function App() {

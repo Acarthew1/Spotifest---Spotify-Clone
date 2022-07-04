@@ -7,12 +7,19 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 function Header({spotify}) {
 
-    const [{ user}, dispatch] = useDataLayerValue();
+    const [{ user, isExpanded}, dispatch] = useDataLayerValue();
+
+    function handleExpandClick() {
+        dispatch({
+            type: 'SET_IS_EXPANDED',
+            isExpanded: !isExpanded
+        })
+    }
 
     return (
         <div className='Header'>
             <div className='HeaderLeft'>
-                <MenuIcon className='menuIconMobile'></MenuIcon>
+                <MenuIcon onClick={() => handleExpandClick()} className='menuIconMobile'></MenuIcon>
             </div>
 
             <div className='HeaderRight'>

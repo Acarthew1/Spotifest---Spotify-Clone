@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Sidebar.css";
 import SidebarOption from './SidebarOption';
 import HomeIcon from '@mui/icons-material/Home';
@@ -7,14 +7,15 @@ import FestivalIcon from '@mui/icons-material/Festival';
 import { useDataLayerValue } from './DataLayer';
 import { Link } from 'react-router-dom';
 import logo from './spotifest.jpg';
+import { style } from '@mui/system';
 
 
 function Sidebar({ spotify }) {
 
-    const [{ playlists }] = useDataLayerValue();
+    const [{ playlists, isExpanded }] = useDataLayerValue();
 
     return (
-        <div className='Sidebar'>
+        <div className={isExpanded ? 'Sidebar' : 'Sidebar.expanded'}>
             <img className='SidebarLogo' alt='logo' src={logo} />
             {/* <img className='SidebarLogo' alt='logo' src='https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg' /> */}
             <Link to='/' style={{ textDecoration: 'none' }}><SidebarOption title="Home" Icon={HomeIcon} /></Link>

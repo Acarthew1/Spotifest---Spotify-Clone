@@ -1,10 +1,9 @@
-@media only screen and (max-width: 600px) {
-    .Sidebar {
-      display: none;
-    }
+@media (max-width: 768px) {
+  .Sidebar {
+    display: none;
   }
 
-.Sidebar {
+  .Sidebar.expanded{
     height: 100vh;
     flex: 0.2;
     color: white;
@@ -12,7 +11,20 @@
     padding-right: 10px;
 
     background-color: #040404;
+  }
 }
+
+
+.Sidebar {
+  height: 100vh;
+  flex: 0.2;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  background-color: #040404;
+}
+
 
 .SidebarLogo {
     object-fit: contain;

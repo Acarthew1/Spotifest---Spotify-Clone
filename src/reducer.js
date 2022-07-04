@@ -14,7 +14,8 @@ export const initialState = {
     selectedArtist: null,
     artistTopTracks: null,
     userPlaylistsForSearch: null,
-    artistList: null
+    artistList: null,
+    isExpanded: true,
 
 };
 
@@ -86,6 +87,11 @@ const reducer = (state, action) => {
         return {
             ...state,
             artistList: action.artistList
+        }
+        case 'SET_IS_EXPANDED':
+        return {
+            ...state,
+            isExpanded: action.isExpanded
         }
         default: 
             return state;
