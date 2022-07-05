@@ -24,6 +24,8 @@ function Footer() {
                 sliderColor: '#1cb954',
                 trackArtistColor: '#ccc',
                 trackNameColor: '#fff',
+                height: '200'
+                
             }} token={token} uris={playingTrack ? [playingTrack] : []} autoPlay={true} play={play} callback={(state) => {
                 setPlay(state.isPlaying);
               }} showSaveIcon={true}/>

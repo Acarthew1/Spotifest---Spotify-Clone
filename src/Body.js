@@ -8,7 +8,7 @@ import SongRow from './SongRow';
 
 function Body({ spotify }) {
 
-    const [{ discoverWeekly }, dispatch] = useDataLayerValue();
+    const [{ discoverWeekly, isExpanded }, dispatch] = useDataLayerValue();
 
     function handlePlayPlaylist() {
         dispatch({
@@ -18,7 +18,7 @@ function Body({ spotify }) {
     }
 
     return (
-        <div className='Body'>
+        <div className={ isExpanded ? 'Body' : 'Body.expanded'}>
             <Header spotify={spotify} />
 
             <div className='BodyInfo'>

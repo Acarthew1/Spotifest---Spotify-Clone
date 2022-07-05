@@ -10,7 +10,7 @@ import logo from './spotifest.jpg';
 import { style } from '@mui/system';
 
 
-function Sidebar({ spotify }) {
+function Sidebar({ spotify}) {
 
     const [{ playlists, isExpanded }] = useDataLayerValue();
 

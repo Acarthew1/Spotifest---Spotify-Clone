@@ -10,10 +10,12 @@
     padding-left: 10px;
     padding-right: 10px;
 
-    background-color: #040404;
+    background-color: #040404 !important;
   }
 }
-
+.none {
+  display: none;
+}
 
 .Sidebar {
   height: 100vh;
