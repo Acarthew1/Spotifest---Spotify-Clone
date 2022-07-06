@@ -4,6 +4,7 @@
   }
 
   .Sidebar.expanded{
+    min-width: 270px;
     height: 100vh;
     flex: 0.2;
     color: white;
@@ -18,6 +19,7 @@
 }
 
 .Sidebar {
+  min-width: 270px;
   height: 100vh;
   flex: 0.2;
   color: white;
