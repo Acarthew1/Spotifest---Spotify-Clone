@@ -7,9 +7,8 @@ Spotifest is a project that I have created in my spare time combining my passion
 
 ## Current Stages
 
-Currently I have created a Spotify Clone allowing users to see all of their playlists, and play the songs within them.
+Currently users can use the application to log into their spotify accounts, browse their playlists and playmusic from them. Users can also search for artists and add them to their unique playlist. The user can then view this playlist in wither artist or song layout and then create a playlist with their desired selections.
 
 ## Future stages
 
-I am currently working on the artists page which will display information about the selected artist as well as an option to add them to your festival playlist
 
